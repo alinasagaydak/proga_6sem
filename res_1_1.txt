@@ -1,3 +1,0 @@
-Beyond 1 sigma:	27
-Beyond 2 sigma:	5
-Beyond 3 sigma:	0
