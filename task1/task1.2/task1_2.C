@@ -1,3 +1,4 @@
+#include "TF1.h"
 #include "TLegend.h"
 
 TF1* initGausDist(double N, double min, double max) {
