@@ -53,7 +53,6 @@ void task3() {
     ROOT::Fit::FillData(data, h);
 
     auto fitfunc = new TF1("fitfunc", fit_func, -50., 50., 4);
-    fitfunc->SetParNames("const", "ampl", "mean", "sigma");
     GlobalLL2 globalLL2(h,fitfunc);
 
     ROOT::Fit::Fitter fitter;
