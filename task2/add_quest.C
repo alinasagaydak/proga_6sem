@@ -8,7 +8,7 @@ void add_quest() {
     int N = 1000;
     auto c1 = new TCanvas("c1", "", 1200, 800);
 
-    auto h1 = new TH1D("h1", Form("N = %i", N), 40, -100., 100.);
+    auto h1 = new TH1D("h1", "", 40, -100., 100.);
     auto h_d = new TH1D("h_d", "", 300, 0., 50.);
 
     TF1* func = new TF1("func", "[0]+[1]*(x/100.)+[2]*(x/100.)**2+[3]*(x/100.)**3+[4]*(x/100.)**4", -100, 100);
