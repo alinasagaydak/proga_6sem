@@ -18,7 +18,7 @@ struct GlobalLL2 {
            double n = hist->GetBinContent(i);
            NLL += ( mu - n + n*(ROOT::Math::Util::EvalLog(n)- ROOT::Math::Util::EvalLog(mu)) );
        }
-       NLL += 0.5 * pow((par[2]-s)/error_s, 2);
+       NLL += 0.5 * pow((par[3]-s)/error_s, 2);
       return NLL;
    }
     TH1D* hist; 
@@ -58,7 +58,7 @@ void task3() {
     ROOT::Fit::Fitter fitter;
     fitter.Config().MinimizerOptions().SetErrorDef(0.5);
     fitter.Config().MinimizerOptions().SetPrintLevel(0);
-    double par[4]={1000., 1., 0., 1.};
+    double par[4]={1000., 1., 0., 1.}; // когда добавляем штрафную функцию, начальные значения фита указать 1000., 700., 0., 1.
 
     fitter.FitFCN(4, globalLL2, par, data.Size(), false);
     ROOT::Fit::FitResult result = fitter.Result();
